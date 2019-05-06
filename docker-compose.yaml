@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+    openresty:
+        container_name: openresty
+        build: ./openresty
+        ports:
+            - "80:80"
+        restart: always
