@@ -16,8 +16,9 @@ RUN mkdir -p ${SOURCE_ROOT} ; wget https://openresty.org/download/openresty-${OP
 
 RUN cd ${SOURCE_ROOT}/openresty-${OPENRESTY_VERSION} && chmod +x configure && ./configure --with-luajit --with-pcre --with-http_gzip_static_module --with-http_realip_module --with-http_geoip_module --with-http_stub_status_module && make && make install
 
-COPY config/nginx.conf /usr/local/openresty/nginx/conf/nginx.conf
-COPY config/nginx.vn.default.conf /etc/nginx/conf.d/default.conf
+# COPY openresty/config/nginx.conf /usr/local/openresty/nginx/conf/nginx.conf
+VOLUME [ "/etc/nginx/conf.d" ]
+
 # RUN chmod +x /start.sh
 # ENTRYPOINT ["nginx","-c","/usr/local/openresty/nginx/conf/nginx.conf"]
 CMD ["/usr/local/openresty/bin/openresty", "-g", "daemon off;"]
