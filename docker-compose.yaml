@@ -8,5 +8,5 @@ services:
             - "80:80"
         restart: always
         volumes:
-            - "./openresty/config/conf.d:/etc/nginx/conf.d:rw"
+            - "./openresty/config/conf.d:/usr/local/openresty/nginx/conf.d:rw"
             - "./openresty/config/nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf:rw"
