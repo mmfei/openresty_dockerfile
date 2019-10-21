@@ -10,7 +10,17 @@ services:
         volumes:
             - "./openresty/config/conf.d:/usr/local/openresty/nginx/conf.d:rw"
             - "./openresty/config/nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf:rw"
+            - "./logs:/usr/local/openresty/nginx/logs:rw"
+        networks:
+            - "mmfei_network_frontend"
+            - "mmfei_network_backend"
 
 networks:
   mmfei_network_frontend:
+#     external:
+#        name: generator_qrcode_mmfei_network_backend
+#    external: true
+#    name: mmfei_network_frontend
   mmfei_network_backend:
+#    external: true
+#    name: mmfei_network_backend
