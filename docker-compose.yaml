@@ -10,3 +10,7 @@ services:
         volumes:
             - "./openresty/config/conf.d:/usr/local/openresty/nginx/conf.d:rw"
             - "./openresty/config/nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf:rw"
+
+networks:
+  mmfei_network_frontend:
+  mmfei_network_backend:
