@@ -5,7 +5,7 @@ ARG RESTY_IMAGE_TAG="3.9"
 
 FROM ${RESTY_IMAGE_BASE}:${RESTY_IMAGE_TAG}
 
-LABEL maintainer="Evan Wies <evan@neomantra.net>"
+LABEL maintainer="wlfkongl@163.com"
 
 # Docker Build Arguments
 ARG RESTY_IMAGE_BASE="alpine"
@@ -150,8 +150,8 @@ RUN apk add --no-cache --virtual .build-deps \
 ENV PATH=$PATH:/usr/local/openresty/luajit/bin:/usr/local/openresty/nginx/sbin:/usr/local/openresty/bin
 
 # Copy nginx configuration files
-COPY nginx.conf /usr/local/openresty/nginx/conf/nginx.conf
-COPY nginx.vh.default.conf /etc/nginx/conf.d/default.conf
+# COPY nginx.conf /usr/local/openresty/nginx/conf/nginx.conf
+# COPY nginx.vh.default.conf /etc/nginx/conf.d/default.conf
 VOLUME [ "/etc/nginx/conf.d" ]
 
 CMD ["/usr/local/openresty/bin/openresty", "-g", "daemon off;"]
