@@ -1,0 +1,2 @@
+2019/10/21 12:42:57 [error] 6#0: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 183.6.114.244, server: qrcode.mmfei.com, request: "GET /html HTTP/1.1", upstream: "http://127.0.0.1:3000/html", host: "qrcode.mmfei.com"
+2019/10/21 12:42:58 [error] 6#0: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 183.6.114.244, server: qrcode.mmfei.com, request: "GET /favicon.ico HTTP/1.1", upstream: "http://127.0.0.1:3000/favicon.ico", host: "qrcode.mmfei.com", referrer: "http://qrcode.mmfei.com/html"
