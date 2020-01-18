@@ -5,7 +5,7 @@ services:
         container_name: openresty
         build: mmfei/openresty_dockerfile
         ports:
-            - "80:80"
+            - "8080:80"
         volumes: 
             - "./openresty/config/vhosts/:/etc/nginx/conf.d:rw"
         restart: always
@@ -13,6 +13,7 @@ services:
             - "./openresty/config/conf.d:/usr/local/openresty/nginx/conf.d:rw"
             - "./openresty/config/nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf:rw"
             - "./logs:/usr/local/openresty/nginx/logs:rw"
+            - "/data1/src/www:/data1/src/www:rw"
         networks:
             - "mmfei_network_frontend"
             - "mmfei_network_backend"
