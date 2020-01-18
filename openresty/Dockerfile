@@ -21,4 +21,5 @@ COPY config/nginx.vn.default.conf /etc/nginx/conf.d/default.conf
 # RUN chmod +x /start.sh
 # ENTRYPOINT ["nginx","-c","/usr/local/openresty/nginx/conf/nginx.conf"]
 CMD ["/usr/local/openresty/bin/openresty", "-g", "daemon off;"]
+VOLUME [ "/etc/nginx/conf.d/" ]
 EXPOSE 80

@@ -6,4 +6,6 @@ services:
         build: ./openresty
         ports:
             - "80:80"
+        volumes: 
+            - "./openresty/config/vhosts/:/etc/nginx/conf.d:rw"
         restart: always
